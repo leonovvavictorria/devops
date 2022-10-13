@@ -1,7 +1,8 @@
 from flask import Flask, abort, request
+from typing import Callable, Iterator, Union, Optional
 
 
-def divide(a: int, b: int) -> object:
+def divide(a: int, b: int) -> Union[float, str]:
     if b == 0:
         return 'Нельзя делить на ноль'
     return float(a/b)
