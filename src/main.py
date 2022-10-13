@@ -1,7 +1,7 @@
 from flask import Flask, abort, request
 
 
-def divide(a, b):
+def divide(a: int, b: int) -> float | str:
     if b == 0:
         return 'Нельзя делить на ноль'
     return a/b
@@ -11,7 +11,7 @@ main = Flask(__name__)
 
 
 @main.route('/', methods=["GET"])
-def get_tasks():
+def get_tasks() -> dict:
     a = int(request.args.get('a'))
     b = int(request.args.get('b'))
     res = None
