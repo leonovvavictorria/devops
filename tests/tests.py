@@ -2,10 +2,10 @@ import requests
 import json
 
 
-def get(a: int, b:int) -> int:
+def get(a: int, b: int) -> float:
     return (json
             .loads(requests
-                   .get(f'http://127.0.0.1:5300/?a={a}&b={b}')
+                   .get(f'http://localhost:5000/?a={a}&b={b}')
                    .text))\
         .get('res')
 
