@@ -1,5 +1,5 @@
 from flask import Flask, abort, request
-from typing import Callable, Iterator, Union, Optional
+from typing import Union
 
 
 def divide(a: int, b: int) -> Union[float, str]:
