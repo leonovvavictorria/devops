@@ -1,9 +1,9 @@
-import pytest
 import requests
 import json
 
+
 def get(a,b):
-    return (json.loads(requests.get(f'http://localhost:8000/?a={a}&b={b}').text)).get('res')
+    return (json.loads(requests.get(f'http://localhost:5000/?a={a}&b={b}').text)).get('res')
 
 def test_1():
     assert get(10,5) == 2
