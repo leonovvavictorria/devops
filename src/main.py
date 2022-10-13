@@ -1,7 +1,7 @@
 from flask import Flask, abort, request
 
 
-def divide(a, b):
+def divide(a: int, b: int):
     if b == 0:
         return 'Нельзя делить на ноль'
     return a/b
