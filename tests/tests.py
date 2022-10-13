@@ -5,7 +5,7 @@ import json
 def get(a: int, b:int) -> int:
     return (json
             .loads(requests
-                   .get(f'http://localhost:5300/?a={a}&b={b}')
+                   .get(f'http://127.0.0.1:5300/?a={a}&b={b}')
                    .text))\
         .get('res')
 
