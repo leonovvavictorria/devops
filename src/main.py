@@ -20,7 +20,7 @@ def get_tasks() -> dict:
     if b == 0:
         res = 'Нельзя делить на ноль'
     elif a and b:
-        res = divide(a, b)
+        res = divide(a, b)  # type: ignore
 
     if res is None:
         abort(422, "Unprocessable Entity")
