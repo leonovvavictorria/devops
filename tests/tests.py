@@ -10,13 +10,13 @@ def get(a: int, b: int) -> float:
         .get('res')
 
 
-def test_1():
+def test_1() -> None:
     assert get(10, 5) == 2
 
 
-def test_2():
+def test_2() -> None:
     assert get(10, 0) == 'Нельзя делить на ноль'
 
 
-def test_3():
+def test_3() -> None:
     assert get(100, 5) == 20

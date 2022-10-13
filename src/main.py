@@ -1,10 +1,10 @@
 from flask import Flask, abort, request
 
 
-def divide(a: int, b: int):
+def divide(a: int, b: int) -> float | str:
     if b == 0:
         return 'Нельзя делить на ноль'
-    return a/b
+    return float(a/b)
 
 
 main = Flask(__name__)
