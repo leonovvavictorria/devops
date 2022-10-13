@@ -11,7 +11,7 @@ main = Flask(__name__)
 
 
 @main.route('/', methods=["GET"])
-def get_tasks() -> dict:
+def get_tasks():
     a = int(request.args.get('a'))
     b = int(request.args.get('b'))
     res = None
