@@ -13,8 +13,8 @@ main = Flask(__name__)
 
 @main.route('/', methods=["GET"])
 def get_tasks() -> dict:
-    a = int(request.args.get('a'))
-    b = int(request.args.get('b'))
+    a = int(request.args.get('a'))  # type: ignore
+    b = int(request.args.get('b'))  # type: ignore
     res = None
 
     if b == 0:
