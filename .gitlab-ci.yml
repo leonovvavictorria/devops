@@ -1,0 +1,26 @@
+#Образ контейнера, в котором будет выполнятьсяci пайплайн
+
+image: python:3.8
+
+#Данная настройка позволяет сохранить кеш установки пакетов между разными запусками пайплайна (экономим время на установку)
+#variables:
+#PIP_CACHE_DIR: "&CI_PROJECT_DIR/.cache/pip"
+
+#cache:
+#   paths:
+#     - .cache/pip
+#     - venv/
+
+#Действия, которые необходимо выполнить до запуска основных действий пайплайна
+#В данном случае, по стандартной практике питона, создаем виртуальное окружение и активируем его
+before_script:
+  - python --version #For debugging
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+
+test:
+  script:
+    - nohup python src/main.py &
+    - pytest -v tests/tests.py
