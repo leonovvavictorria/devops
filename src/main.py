@@ -1,11 +1,14 @@
-from flask import Flask,abort,request
+from flask import Flask, abort, request
 
-def divide(a,b):
+
+def divide(a, b):
     if b == 0:
         return 'Нельзя делить на ноль'
     return a/b
 
+
 main = Flask(__name__)
+
 
 @main.route('/', methods=["GET"])
 def get_tasks():
@@ -18,7 +21,7 @@ def get_tasks():
     elif a and b:
         res = divide(a, b)
 
-    if res == None:
+    if res is None:
         abort(422,"Unprocessable Entity")
     return {'res': res}
 
