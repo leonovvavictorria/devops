@@ -25,4 +25,4 @@ test:
     - nohup python src/main.py &
     - pytest -v tests/tests.py
     - flake8 .
-    - mypy .
+#    - mypy .
