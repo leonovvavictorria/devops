@@ -2,7 +2,7 @@ import requests
 import json
 
 
-def get(a, b):
+def get(a: int, b: int) -> float:
     return (json
             .loads(requests
                    .get(f'http://localhost:5000/?a={a}&b={b}')
