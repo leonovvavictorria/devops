@@ -22,7 +22,7 @@ def get_tasks():
         res = divide(a, b)
 
     if res is None:
-        abort(422,"Unprocessable Entity")
+        abort(422, "Unprocessable Entity")
     return {'res': res}
 
 

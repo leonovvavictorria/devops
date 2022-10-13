@@ -3,7 +3,11 @@ import json
 
 
 def get(a, b):
-    return (json.loads(requests.get(f'http://localhost:5000/?a={a}&b={b}').text)).get('res')
+    return (json
+            .loads(requests
+                   .get(f'http://localhost:5000/?a={a}&b={b}')
+                   .text))\
+        .get('res')
 
 
 def test_1():
